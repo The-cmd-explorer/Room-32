@@ -8,9 +8,6 @@
     iframe.src = url;
     win.document.body.appendChild(iframe);
     
-    // Close after a short delay
-    setTimeout(function() {
-        window.close();
-    }, 100);
+    // Replace current page with about:blank
+    window.location.replace("about:blank");
 </script>
-Close this page after the about:blank page is open so it doesnt get detected and blocked!!!!!!
