@@ -1,13 +1,20 @@
 <script>
-    var win = window.open();
-    var url = "index.html";
-    var iframe = win.document.createElement('iframe');
+    // Store the iframe content in the current window
+    var iframe = document.createElement('iframe');
     iframe.style.width = "100%";
     iframe.style.height = "100%";
     iframe.style.border = "none";
-    iframe.src = url;
-    win.document.body.appendChild(iframe);
+    iframe.style.position = "fixed";
+    iframe.style.top = "0";
+    iframe.style.left = "0";
+    iframe.src = "index.html";
     
-    // Replace current page with about:blank
-    window.location.replace("about:blank");
+    // Clear the current page and add the iframe
+    document.body.innerHTML = '';
+    document.body.style.margin = "0";
+    document.body.style.overflow = "hidden";
+    document.body.appendChild(iframe);
+    
+    // Replace the URL in the address bar with about:blank
+    history.replaceState(null, '', 'about:blank');
 </script>
